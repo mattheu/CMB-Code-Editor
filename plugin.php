@@ -7,11 +7,8 @@ Plugin Name: CMB Code Editor
 define( 'CMB_CODE_PATH', str_replace( '\\', '/', dirname( __FILE__ ) ) );
 define( 'CMB_CODE_URL', str_replace( str_replace( '\\', '/', WP_CONTENT_DIR ), str_replace( '\\', '/', WP_CONTENT_URL ), CMB_CODE_PATH ) );
 
-add_filter( 'cmb_meta_boxes', 'cmb_code_editor_example_field' );
-
 add_filter( 'cmb_field_types', 'cmb_code_editor_register' );
 add_filter( 'plugins_loaded', 'cmb_code_editor_define_class' );
-
 
 function cmb_code_editor_register ($classes) {
 	
@@ -75,3 +72,4 @@ function cmb_code_editor_example_field ( array $meta_boxes ) {
 	return $meta_boxes;
 
 }
+//add_filter( 'cmb_meta_boxes', 'cmb_code_editor_example_field' );
